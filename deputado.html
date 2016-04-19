@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Gere seu próprio discurso de deputado com incríveis argumentos!">
+    <meta name="author" content="Dk Ribeiro">
+
+    <meta property="og:title" content="Gerador de Discurso de Deputado" />
+    <meta property="og:description" content="Gere seu próprio discurso de deputado com incríveis argumentos!" />
+    <meta property="og:image" content="deputado_files/deputado.jpg" />
+
+    <title>Gerador de Discurso de Deputado</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="deputado_files/bootstrap.css" rel="stylesheet">
+    <link href="deputado_files/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand text-center col-sm-12">Gerador de Discurso de Deputado</h3>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <p class="lead" id="discurso"></p>
+            <p class="lead" id="entrada">
+              Informe seu voto:<br>
+              <input type="text" class="form-control" id="voto" value="" placeholder="Sim, não, quem sabe, Inês Brasil Presidente, etc.">
+              <br><br>
+              <a href="#" class="btn btn-lg btn-default" id="gerar">Gere seu discurso</a>
+            </p>
+            <p class="lead" id="denovo"><br>
+              <a href="deputado.html" class="btn btn-default">Gerar outro discurso</a>
+              <br>
+
+              <div class="fb-share-button" data-href="http://facipes.viagiz.com/" data-layout="button_count" data-mobile-iframe="false"></div>
+
+            </p>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="deputado_files/jquery.js"></script>
+    <script src="deputado_files/bootstrap.js"></script>
+    <script src="deputado_files/typed.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+<script type="text/javascript">
+
+  jQuery(function($){
+
+    $("#gerar").click(function(){
+
+      $("#discurso").show();
+      $("#entrada").slideUp(800);
+
+       pelos = "pelo meu primo de Presidente Prudente, por todas as pessoas nas redes sociais, pela galera do snapchat, pela minha empregada Jandira, pelo bem da nação, pela valorização do dólar, pela volta do crescimento da economia, pelo meu pastor Alberto, pela Bíblia Sagrada como nova constituição, pelo fim da corrupção, pela BR 262, pela novela das 9, pela minha familia, pelo nome de Deus, pelo meu estado, pelo meu neto Gilberto, pela minha Igreja, pela dona Roberta da minha rua, pelo Cruzeiro Esporte Clube, por minha atual esposa, pelo meu alfaiate, pelo Coronel Mostarda";
+       pelo = pelos.split(",");
+
+      texto = "";
+      for (var i = 0; i < 5; i++) {
+        index = Math.floor(Math.random() * pelo.length);
+        texto += pelo[index] + ", ";
+        pelo.splice(index, 1);
+      }
+      texto += " meu voto é <span class='voto'>"+$("#voto").val()+"!</span>";
+
+      texto = texto.charAt(0).toUpperCase() + texto.slice(1);
+
+      $("#discurso").typed({
+        strings: [texto],
+        typeSpeed: 0,
+        callback: function(){
+          $("#denovo").slideDown(300);
+        }
+      });
+
+      return false;
+
+    });
+
+
+  });
+</script>
+
+</body></html>
